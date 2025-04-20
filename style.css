@@ -1,0 +1,98 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1d1b2a, #312f4f);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    background-color: #2d2b3a;
+    font-size: 2.5rem;
+    color: #61dafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cell.pop {
+    transform: scale(1.2);
+  }
+  
+  .status {
+    font-size: 1.3rem;
+    margin: 20px 0 30px 0;
+    min-height: 2em;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  button {
+    background-color: #87cefa;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 10px;
+  }
+  
+  button:hover {
+    background-color: #5eb5ec;
+  }
+  
+  .mode-selection,
+  .player-names,
+  .scoreboard {
+    margin-top: 15px;
+  }
+  
+  input {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  /* Game Over Animation */
+  @keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+  }
+  
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    animation: confetti-fall 2s ease-in forwards;
+    z-index: 999;
+    opacity: 0.8;
+    border-radius: 50%;
+  }
+  
+  /* Background Confetti Colors */
+  .confetti:nth-child(odd) { background-color: #f9ca24; }
+  .confetti:nth-child(even) { background-color: #f0932b; }
+  
